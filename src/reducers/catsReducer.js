@@ -1,19 +1,17 @@
 
 
-export default function catReducer(state = { cats: [], requesting: false} , action){
+export default function catReducer(state = { cats: [], loading: false} , action){
     switch (action.type) {
-      case 'loadCats':
-        console.log('loading data....')
+      case 'LOADING_CATS':
         return {
           ...state, cats: [...state.cats],
-          requesting: true,
+          loading: true,
         };
 
-      case 'addcats':
-        console.log("action", action.images);
+      case 'ADD_CATS':
         return {
-          ...state, cats: [...action.images],
-          requesting: false,
+          ...state, cats: action.cats,
+          loading: false,
         }
 
       default:

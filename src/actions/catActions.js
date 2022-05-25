@@ -2,11 +2,11 @@
 const API = 'https://learn-co-curriculum.github.io/cat-api/cats.json'
 
 
-export function catActions() {
+export function fetchCats() {
   return (dispatch) => {
-    dispatch({ type: 'loadCats' }) // should indicate that the data is loading
+    dispatch({ type: 'LOADING_CATS' }) // should indicate that the data is loading
     // does the data loading
-    fetch(API).then(resp => resp.json()).then(data => dispatch({ type: "addcats", images: data.images }))
+    fetch(API).then(resp => resp.json()).then(data => dispatch({ type: "ADD_CATS", cats: data.images }))
   }
 
 
