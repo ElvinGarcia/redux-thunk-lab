@@ -4,7 +4,7 @@ import  React, { Component } from "react";
 
 class CatList extends Component{
   render() {
-    const catPics = this.props.catPics.map((cat, i) => (<li key={i}><img src={cat.url} /></li> ))
+    const catPics = this.props.catPics.map(cat => (<li key={cat.id}><img src={cat.url} alt='cat' /></li> ))
     return (
       <ul>
         {catPics}
